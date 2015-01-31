@@ -1,0 +1,36 @@
+{
+  "name": "nd-wheel",
+  "version": "0.0.0",
+  "description": "滚轮事件",
+  "keywords": [],
+  "homepage": "https://github.com/ndfront/nd-wheel",
+  "author": {
+    "name": "lzhengms",
+    "email": "lzhengms@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ndfront/nd-wheel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ndfront/nd-wheel/issues"
+  },
+  "licenses": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-exec": "^0.4.6",
+    "grunt-spm-server": "^0.0.4",
+    "load-grunt-tasks": "^0.6.0"
+  },
+  "spm": {
+    "main": "index.js",
+    "dependencies": {
+      "jquery": "1.11.1",
+      "nd-browser":"0.0.0"
+    },
+    "devDependencies": {
+      "expect.js": "0.3.1"
+    }
+  }
+}
