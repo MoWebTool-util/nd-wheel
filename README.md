@@ -1,6 +1,6 @@
 # nd-wheel
 
-[![spm version](http://spmjs.io/badge/nd-wheel)](http://spmjs.io/package/nd-wheel)
+[![spm version](http://spm.crossjs.com/badge/nd-wheel)](http://spm.crossjs.com/package/nd-wheel)
 
 > 滚轮事件
 
