@@ -6,14 +6,29 @@
 
 'use strict';
 
-var browser = require('nd-browser');
-
 var wheel = function(node, callback) {
   if (!callback) {
     return;
   }
 
-  if (browser.ie) {
+  if (node.addEventListener) {
+    // firefox
+    if (!!window.InstallTrigger) {
+      node.addEventListener('DOMMouseScroll', function(e) {
+        callback(e.detail < 0 ? 'up' : e.detail > 0 ? 'down' : '', function() {
+          e.preventDefault();
+        }, 'firefox');
+      }, false);
+    } else {
+      // webkit
+      node.addEventListener('mousewheel', function(e) {
+        callback(e.wheelDelta >= 0 ? 'up' : e.wheelDelta <= 0 ? 'down' : '', function() {
+          e.returnValue = false;
+        }, 'standard');
+      }, false);
+    }
+  } else if (node.attachEvent) {
+    // ie
     node.attachEvent('onmousewheel', function(e) {
       e || (e = window.event);
 
@@ -22,18 +37,6 @@ var wheel = function(node, callback) {
         e.returnValue = false;
       }, 'ie');
     });
-  } else if (browser.firefox) {
-    node.addEventListener('DOMMouseScroll', function(e) {
-      callback(e.detail < 0 ? 'up' : e.detail > 0 ? 'down' : '', function() {
-        e.preventDefault();
-      }, 'firefox');
-    }, false);
-  } else {
-    node.addEventListener('mousewheel', function(e) {
-      callback(e.wheelDelta >= 0 ? 'up' : e.wheelDelta <= 0 ? 'down' : '', function() {
-        e.returnValue = false;
-      }, 'standard');
-    }, false);
   }
 };
 

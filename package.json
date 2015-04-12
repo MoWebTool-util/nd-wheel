@@ -25,7 +25,6 @@
   "spm": {
     "main": "index.js",
     "dependencies": {
-      "nd-browser":"0.0.0"
     },
     "devDependencies": {
       "expect.js": "0.3.1"
