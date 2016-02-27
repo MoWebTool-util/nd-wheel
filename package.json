@@ -1,6 +1,6 @@
 {
   "name": "nd-wheel",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "滚轮事件",
   "keywords": [],
   "homepage": "https://github.com/ndfront/nd-wheel",
@@ -22,8 +22,8 @@
   "licenses": "MIT",
   "main": "index.js",
   "dependencies": {
-    "jquery": "^1.11.1",
-    "nd-browser": "^3.0.0"
+    "nd-browser": "^3.0.0",
+    "nd-jquery": "^2.2.1"
   },
   "devDependencies": {
     "expect.js": "^0.3.1",
