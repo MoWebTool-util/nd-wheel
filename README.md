@@ -15,6 +15,17 @@ $ npm install nd-wheel --save
 ## 使用
 
 ```js
-var Wheel = require('nd-wheel');
-// use Wheel
+var wheel = require('nd-wheel');
+// use wheel
+wheel(input, function(type, prevent) {
+  prevent();
+
+  if (type === 'up') {
+    // increase
+  } else if (type === 'down') {
+    // descrease
+  }
+
+  input.select();
+});
 ```
